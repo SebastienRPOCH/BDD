@@ -14,14 +14,11 @@ ENV MONGO_VERSION 3.0.15
 ENV MONGO_PACKAGE mongodb-org 
 
 
-RUN set -x \ 
- 	&& apt-get update \ 
- 	&& apt-get install -y \ 
- 		${MONGO_PACKAGE}=$MONGO_VERSION \ 
- 		${MONGO_PACKAGE}-server=$MONGO_VERSION \ 
- 		${MONGO_PACKAGE}-shell=$MONGO_VERSION \ 
- 		${MONGO_PACKAGE}-mongos=$MONGO_VERSION \ 
-		${MONGO_PACKAGE}-tools=$MONGO_VERSION \ 
+RUN apt-get install -y mongodb-org=3.0.15
+RUN apt-get install -y mongodb-org-server=3.0.15  
+RUN apt-get install -y mongodb-org-shell=3.0.15
+RUN apt-get install -y mongodb-org-mongos=3.0.15 
+RUN apt-get install -y mongodb-org-tools=3.0.15 
 
 RUN mkdir -p /data/db /data/configdb \ 
  	&& chown -R mongodb:mongodb /data/db /data/configdb 
