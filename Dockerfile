@@ -9,16 +9,11 @@ RUN apt-get install -y net-tools
 RUN apt-get install -y sudo
 RUN apt-get install -y ca-certificates
 
-ENV MONGO_MAJOR 3.0 
-ENV MONGO_VERSION 3.0.15 
-ENV MONGO_PACKAGE mongodb-org 
-
-
-RUN apt-get install -y mongodb-org=3.0.15
-RUN apt-get install -y mongodb-org-server=3.0.15  
-RUN apt-get install -y mongodb-org-shell=3.0.15
-RUN apt-get install -y mongodb-org-mongos=3.0.15 
-RUN apt-get install -y mongodb-org-tools=3.0.15 
+RUN apt-get install -y mongodb-org
+RUN apt-get install -y mongodb-org-server 
+RUN apt-get install -y mongodb-org-shell
+RUN apt-get install -y mongodb-org-mongos
+RUN apt-get install -y mongodb-org-tools
 
 RUN mkdir -p /data/db /data/configdb \ 
  	&& chown -R mongodb:mongodb /data/db /data/configdb 
