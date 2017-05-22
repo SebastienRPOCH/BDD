@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debien:wheezy
 
 RUN apt-get update
 RUN apt-get install -y dialog
@@ -10,9 +10,9 @@ RUN apt-get install -y sudo
 RUN apt-get install -y ca-certificates
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-RUN echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.4 main" | sudo tee 
-RUN apt-get update
+RUN echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.4 main" | tee 
 
+RUN apt-get update
 RUN apt-get install -y mongodb-org
 
 RUN mkdir -p /data/db /data/configdb \ 
